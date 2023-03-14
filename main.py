@@ -1,17 +1,18 @@
 def binToArray(bin):
-    array = []
+    array = ""
 
     for i in range(4):
-        array.append(bin[i * 8: (i+1) * 8])
+        array += bin[i * 8: (i+1) * 8]
+
+        if i < 4 - 1: array += "."
     
     return array
 
 def binToIp(bin):
-    array = binToArray(bin)
     ip = ""
 
     for i in range(4):
-        ip += str(int(array[i], 2))
+        ip += str(int(bin[i * 8: (i+1) * 8], 2))
 
         if i < 4 - 1: ip += "."
     
@@ -83,24 +84,23 @@ for i in range(31):
 
 first_ip += "1"
 
-print("Mask binary: " + str(binToArray(cidr_continuous)))
+print("Mask binary: " + binToArray(cidr_continuous))
 print("Mask string: " + binToIp(cidr_continuous))
-print()
 print("Possible quantity of addresses in the network: " + str(addrs_count))
 print()
-print("Given IP address: " + str(given_ip_array))
-print("Given IP address in binary: " + str(given_ip_bin))
-print()
-print("First IP binary: " + str(binToArray(first_ip)))
-print("First IP string: " + binToIp(first_ip))
-print()
-print("Last IP binary: " + str(binToArray(last_ip)))
-print("Last IP string: " + binToIp(last_ip))
-print()
-print("Server IP binary: " + str(binToArray(server_ip)))
+print("Given IP binary: " + binToArray(given_ip_continuous))
+print("Given IP string: " + binToIp(given_ip_continuous))
+print("\n")
+print("Server IP binary: " + binToArray(server_ip))
 print("Server IP string: " + binToIp(server_ip))
 print()
-print("Diffusion IP binary: " + str(binToArray(diffusion_ip)))
+print("First IP binary: " + binToArray(first_ip))
+print("First IP string: " + binToIp(first_ip))
+print()
+print("Last IP binary: " + binToArray(last_ip))
+print("Last IP string: " + binToIp(last_ip))
+print()
+print("Diffusion IP binary: " + binToArray(diffusion_ip))
 print("Diffusion IP string: " + binToIp(diffusion_ip))
 print()
 
