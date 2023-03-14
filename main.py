@@ -102,3 +102,5 @@ print("Server IP string: " + binToIp(server_ip))
 print()
 print("Diffusion IP binary: " + str(binToArray(diffusion_ip)))
 print("Diffusion IP string: " + binToIp(diffusion_ip))
+print()
+
