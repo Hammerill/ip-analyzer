@@ -5,7 +5,7 @@ def binToArray(bin):
         array += bin[i * 8: (i+1) * 8]
 
         if i < 4 - 1: array += "."
-    
+
     return array
 
 def binToIp(bin):
@@ -15,7 +15,7 @@ def binToIp(bin):
         ip += str(int(bin[i * 8: (i+1) * 8], 2))
 
         if i < 4 - 1: ip += "."
-    
+
     return ip
 
 print("Input an IP address like this \"192.168.0.1/16\": ")
@@ -103,4 +103,3 @@ print()
 print("Diffusion IP binary: " + binToArray(diffusion_ip))
 print("Diffusion IP string: " + binToIp(diffusion_ip))
 print()
-
